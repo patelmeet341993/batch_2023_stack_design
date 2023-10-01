@@ -8,6 +8,17 @@ class StackHome extends StatefulWidget {
 }
 
 class _StackHomeState extends State<StackHome> {
+
+
+
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +66,21 @@ class _StackHomeState extends State<StackHome> {
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
+              padding: EdgeInsets.all(30),
               margin: EdgeInsets.only(bottom: 75),
               width: 150,
               height: 150,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(75),
-                color: Colors.red,
+                color: Colors.green,
+              ),
+              child: Container(
+                height: 130,
+                width: 130,
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(65)
+                ),
               ),
             ),
           ),
@@ -87,13 +107,25 @@ class _StackHomeState extends State<StackHome> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
-              margin: EdgeInsets.only(bottom: 75),
-              width: 150,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(75),
-                color: Colors.red,
+            child: InkWell(
+              onTap: ()async{
+                print("Clicked1");
+
+                Future.delayed(Duration(seconds: 2,),(){
+                  print("hello");
+
+                });
+
+
+              },
+              child: Container(
+                margin: EdgeInsets.only(bottom: 75),
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(75),
+                  color: Colors.grey,
+                ),
               ),
             ),
           ),
